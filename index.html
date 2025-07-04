@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>ฝากถึง อ้วนของเค้าคั้บบ</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Sriracha', cursive;
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+    .text-box {
+        max-width: 400px;
+        text-align: center;
+    }
+    h1 {
+        color: #fff;
+        font-size: 2.5em;
+        text-shadow: 2px 2px 5px #00000050;
+        margin-bottom: 20px;
+    }
+    p {
+        color: #fff;
+        font-size: 1.2em;
+        background: rgba(255,255,255,0.2);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 0 10px #00000050;
+    }
+    iframe {
+        width: 360px;
+        height: 215px;
+        border-radius: 15px;
+        box-shadow: 0 0 10px #00000050;
+    }
+    .heart {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: red;
+        transform: rotate(45deg);
+        animation: float 5s linear infinite;
+    }
+    .heart::before, .heart::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: red;
+        border-radius: 50%;
+    }
+    .heart::before {
+        top: -10px;
+        left: 0;
+    }
+    .heart::after {
+        left: -10px;
+        top: 0;
+    }
+    @keyframes float {
+        0% {
+            transform: translateY(100vh) scale(0.5) rotate(45deg);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-10vh) scale(1.5) rotate(45deg);
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="text-box">
+        <h1>ฝากถึง อ้วนของเค้าคั้บบ 💖</h1>
+        <p>
+            อ้วนเค้าขอโทษน้าที่เค้าทำให้อ้วนคิดมากอีกแล้ว เค้าขอโทษจริงๆนะ<br>
+            เค้าจะพยายามปรับตัวเองให้อยู่กับอ้วนได้นะ<br>
+            เค้ารักอ้วนจริงๆนะ อ้วนอย่าทิ้งเค้าได้มั้ย<br>
+            เค้ารักอ้วนมากจริงๆนะ เค้าขอโทษที่บางทีเค้างี้เง่าใส่อ้วนนะ<br>
+            เค้าจะพยายามปรับให้ได้นะคั้บบบ เค้ารักอ้วนน้าาา<br>
+            รักที่สุดในโลกเลยย 💕🥺💐
+        </p>
+    </div>
+    
+    <iframe src="https://www.youtube.com/embed/-WjqJ_oZ0p0?si=yfSxux6Pb_K44qWt" 
+    title="YouTube video player" frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+</div>
+
+<audio id="bgMusic" src="love.mp3" autoplay loop></audio>
+
+<script>
+// สร้างหัวใจลอย
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+setInterval(createHeart, 300);
+
+// กดจอครั้งแรกเพื่อเล่นเพลง ถ้าบราวเซอร์บล็อก
+document.addEventListener('click', () => {
+    const music = document.getElementById('bgMusic');
+    music.play();
+}, { once: true });
+</script>
+
+</body>
+</html>
